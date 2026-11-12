@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="menus.css" />
 </head>
 <body>
   <header class="header" id="inicio">
@@ -112,7 +113,7 @@
       </div>
 
       <div class="menu-cta reveal">
-        <a class="btn btn-light" href="https://livemenu.app/menu/665dc34fe34c0a9d43825a36" target="_blank" rel="noopener">Ver cardápio digital</a>
+        <button class="btn btn-light" type="button" id="open-menus">Ver cardápios por unidade</button>
       </div>
     </section>
 
@@ -183,6 +184,23 @@
   </footer>
 
   <a class="floating-book" href="https://reservation-widget.tagme.com.br/group/665f198ae34c0a9d438c8a9f" target="_blank" rel="noopener" aria-label="Reservar mesa">Reservar</a>
+
+  <dialog id="menus-dialog" class="menus-dialog" aria-labelledby="menus-title">
+    <div class="menus-dialog-inner">
+      <div class="menus-dialog-head">
+        <div><p class="eyebrow dark">CANTUCCI OSTERIA</p><h2 id="menus-title">Cardápios oficiais</h2></div>
+        <button type="button" class="menus-close" id="close-menus" aria-label="Fechar cardápio">×</button>
+      </div>
+      <p>Escolha uma unidade para consultar o cardápio atualizado. Se a visualização não carregar, use o botão para abrir o cardápio oficial.</p>
+      <div class="menus-unit-buttons" role="group" aria-label="Escolher unidade">
+        <button type="button" data-menu-unit="norte" aria-pressed="true">Asa Norte</button>
+        <button type="button" data-menu-unit="sul" aria-pressed="false">Asa Sul</button>
+        <button type="button" data-menu-unit="aguas" aria-pressed="false">Águas Claras</button>
+      </div>
+      <iframe id="menus-frame" title="Cardápio oficial da unidade Asa Norte" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="menus-dialog-actions"><a id="menus-external" class="btn btn-primary" href="https://livemenu.app/menu/665dc33d7056b7c302fc3938" target="_blank" rel="noopener noreferrer">Abrir cardápio oficial ↗</a></div>
+    </div>
+  </dialog>
   <script type="module" src="script.js"></script>
 </body>
 </html>
