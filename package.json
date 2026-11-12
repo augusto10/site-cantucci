@@ -1,0 +1,12 @@
+{
+  "name": "cantucci-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite cantucci-site",
+    "build": "vite build cantucci-site"
+  },
+  "devDependencies": {
+    "vite": "^6.4.1"
+  }
+}
